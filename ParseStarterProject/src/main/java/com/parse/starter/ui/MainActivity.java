@@ -8,23 +8,40 @@
  */
 package com.parse.starter.ui;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.starter.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ListActivity {
+
+  Boolean isLogin;
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    if(ParseUser.getCurrentUser() != null){
+      Intent intent = new Intent(this, LogInActivity.class);
+      startActivity(intent);
+    }
+
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
+
+    // ParseQuery<ParseObject> query = ParseQuery.getQuery("message");
+
   }
 
   @Override
