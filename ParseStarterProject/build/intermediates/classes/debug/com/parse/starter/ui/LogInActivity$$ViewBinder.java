@@ -16,6 +16,10 @@ public class LogInActivity$$ViewBinder<T extends com.parse.starter.ui.LogInActiv
     target.mBtnSubmit = finder.castView(view, 2131492948, "field 'mBtnSubmit'");
     view = finder.findRequiredView(source, 2131492949, "field 'mTxtSubmit'");
     target.mTxtSubmit = finder.castView(view, 2131492949, "field 'mTxtSubmit'");
+    view = finder.findRequiredView(source, 2131492944, "field 'mImgLogo'");
+    target.mImgLogo = finder.castView(view, 2131492944, "field 'mImgLogo'");
+    view = finder.findRequiredView(source, 2131492943, "field 'mRelativeLayout'");
+    target.mRelativeLayout = finder.castView(view, 2131492943, "field 'mRelativeLayout'");
   }
 
   @Override public void unbind(T target) {
@@ -23,5 +27,7 @@ public class LogInActivity$$ViewBinder<T extends com.parse.starter.ui.LogInActiv
     target.mTxtPassword = null;
     target.mBtnSubmit = null;
     target.mTxtSubmit = null;
+    target.mImgLogo = null;
+    target.mRelativeLayout = null;
   }
 }

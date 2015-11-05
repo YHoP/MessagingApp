@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.parse.starter.R;
@@ -24,6 +26,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.txtPassword) EditText mTxtPassword;
     @Bind(R.id.btnSubmit) Button mBtnSubmit;
     @Bind(R.id.txtSubmit) TextView mTxtSubmit;
+    @Bind(R.id.imgLogo) ImageView mImgLogo;
+    @Bind(R.id.relativeLayout) RelativeLayout mRelativeLayout;
 
     Boolean signUpModeActive;
 
@@ -33,10 +37,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_log_in);
         ButterKnife.bind(this);
 
-        String username = mTxtUsername.getText().toString();
-        String password = mTxtPassword.getText().toString();
-
-        User.login(username, password);
+        signUpModeActive = true;
+        mTxtSubmit.setOnClickListener(this);
+        mTxtSubmit.setOnClickListener(this);
+        mImgLogo.setOnClickListener(this);
+        mRelativeLayout.setOnClickListener(this);
 
     }
 
@@ -66,17 +71,19 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         String username = String.valueOf(mTxtUsername.getText());
         String password = String.valueOf(mTxtPassword.getText());
         if(signUpModeActive) {
-            User user = new User();
-            user.login(username, password);
-        } else {
             User user = new User(username, password);
             user.signUp();
+            showMessageList();
+        } else {
+            User user = new User();
+            user.login(username, password);
+            showMessageList();
         }
-        showMessageList();
+
     }
 
     public void showMessageList() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(LogInActivity.this, MainActivity.class);
         startActivity(intent);
     }
 

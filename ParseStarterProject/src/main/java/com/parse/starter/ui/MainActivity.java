@@ -11,29 +11,29 @@ package com.parse.starter.ui;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 
 import com.parse.ParseAnalytics;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.starter.R;
+import com.parse.starter.adapter.MessageAdapter;
+import com.parse.starter.models.Message;
 
 
 public class MainActivity extends ListActivity {
 
   Boolean isLogin;
-
-
+  MessageAdapter mAdapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    if(ParseUser.getCurrentUser() != null){
+    if(ParseUser.getCurrentUser() == null){
       Intent intent = new Intent(this, LogInActivity.class);
       startActivity(intent);
     }
@@ -41,6 +41,14 @@ public class MainActivity extends ListActivity {
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
     // ParseQuery<ParseObject> query = ParseQuery.getQuery("message");
+
+  }
+
+  @Override
+  protected void onListItemClick(ListView l, View v, int position, long id){
+    super.onListItemClick(l, v, position, id);
+    Message thisMessage = (Message) mAdapter.getItem(position);
+
 
   }
 

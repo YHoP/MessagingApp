@@ -64,7 +64,8 @@
         android:singleLine="true"
         android:background="#906ad1ff"
         android:textColor="#ffffff"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:onClick="signUpOrLogin"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,6 +76,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:textColor="#5ab1d8"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        />
 </RelativeLayout>
 <!-- From: file:/Users/Guest/Desktop/Message%20Board/ParseStarterProject/src/main/res/layout/activity_log_in.xml -->

@@ -11,10 +11,9 @@ import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 public class User {
-    ParseUser mParseUser;
+    ParseUser mParseUser = new ParseUser();
 
     public User(String username, String password) {
-        ParseUser mParseUser = new ParseUser();
         mParseUser.setUsername(username);
         mParseUser.setPassword(password);
     }
