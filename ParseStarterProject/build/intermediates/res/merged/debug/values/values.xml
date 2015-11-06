@@ -210,6 +210,7 @@
     <eat-comment/>
     <string name="title_activity_log_in">LogInActivity</string>
     <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_new_message">NewMessageActivity</string>
     <!-- From: file:/Users/Guest/Desktop/Message%20Board/ParseStarterProject/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

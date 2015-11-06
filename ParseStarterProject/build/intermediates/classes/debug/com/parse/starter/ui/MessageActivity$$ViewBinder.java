@@ -12,10 +12,10 @@ public class MessageActivity$$ViewBinder<T extends com.parse.starter.ui.MessageA
     target.mTxtTitle = finder.castView(view, 2131492945, "field 'mTxtTitle'");
     view = finder.findRequiredView(source, 2131492946, "field 'mTxtUsername'");
     target.mTxtUsername = finder.castView(view, 2131492946, "field 'mTxtUsername'");
-    view = finder.findRequiredView(source, 2131492950, "field 'mTxtMessage'");
-    target.mTxtMessage = finder.castView(view, 2131492950, "field 'mTxtMessage'");
-    view = finder.findRequiredView(source, 2131492951, "field 'mTxtPostDate'");
-    target.mTxtPostDate = finder.castView(view, 2131492951, "field 'mTxtPostDate'");
+    view = finder.findRequiredView(source, 2131492951, "field 'mTxtMessage'");
+    target.mTxtMessage = finder.castView(view, 2131492951, "field 'mTxtMessage'");
+    view = finder.findRequiredView(source, 2131492952, "field 'mTxtPostDate'");
+    target.mTxtPostDate = finder.castView(view, 2131492952, "field 'mTxtPostDate'");
   }
 
   @Override public void unbind(T target) {

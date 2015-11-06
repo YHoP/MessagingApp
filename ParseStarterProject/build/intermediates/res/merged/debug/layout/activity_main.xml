@@ -16,12 +16,7 @@
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context=".MainActivity">
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@android:id/list"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,5 +25,24 @@
         android:id="@android:id/empty"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Message"
+        android:id="@+id/btnAddMessage"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/btnAddMessage"/>
+
 </RelativeLayout>
 <!-- From: file:/Users/Guest/Desktop/Message%20Board/ParseStarterProject/src/main/res/layout/activity_main.xml -->

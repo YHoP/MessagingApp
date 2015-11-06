@@ -1,20 +1,31 @@
 package com.parse.starter.models;
 
 
+import android.util.Log;
+
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
 
 import java.util.Date;
 import java.util.List;
 
 public class Message {
-    ParseObject mParseObject;
+    private ParseObject mParseObject;
+    private static List<ParseObject> mObjects;
+    private static List<Message> messages;
 
 
-    public void message(){
-        ParseObject mParseObject = new ParseObject("Message");
+    public Message(String title, String message){
+        mParseObject = new ParseObject("Message");
+        mParseObject.put("title", title);
+        mParseObject.put("message", message);
+    }
+
+    public Message(ParseObject parseObject) {
+        mParseObject = parseObject;
     }
 
     public String getTitle() {
@@ -38,4 +49,19 @@ public class Message {
         return date.toString();
     }
 
+    public void save() {
+        mParseObject.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e == null) {
+                    Log.i("Save Message", "Successful");
+                } else {
+                    Log.i("Save Message", "Failed");
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
 }
+
